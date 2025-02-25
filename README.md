@@ -18,8 +18,9 @@
 <br>
 
 <div align="center">
-  <img src="Flow.Launcher.Plugin.Gitmoji_Plus/Images/icon.png" alt="Shortcuts logo" width="75">  
-  <h1>Gitmoji Plus <br> Quickly search and copy Gitmojis</h1>
+  <img src="readme-assets/gitmoji-header.gif" alt="Shortcuts logo" width="400" alt="gitmoji"><br>
+  <img src="readme-assets/flow-launcher-header.png" width="450"><br>
+  <h1 style="margin-bottom: 0">Gitmoji Plus - Quickly search and copy Gitmojis</h1>
   <p>
     based on original 
     <a href="https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji">gitmoji plugin</a>
@@ -41,11 +42,22 @@ Written in C# for native flow launcher support and better perfomance.
 Original plugin was written in python but lacked a few emojis and was quite slow.
 
 
+### Installation
+
+1. Install [flow launcher](https://github.com/Flow-Launcher/Flow.Launcher) if you haven't already.
+2. Execute the following command in flow launcher to install the plugin.
+
+```cmd
+pm install Gitmoji Plus by tho-myr
+```
+
 ### Usage
 
 ```cmd
 gmp <search_query>
 ```
+
+![plugin-screenshot.png](readme-assets/plugin-screenshot.png)
 
 ### Development
 
