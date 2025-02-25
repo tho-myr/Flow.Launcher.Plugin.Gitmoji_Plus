@@ -1,0 +1,2 @@
+dotnet publish Flow.Launcher.Plugin.Gitmoji_Plus -c Release -r win-x64 --no-self-contained
+Compress-Archive -LiteralPath Flow.Launcher.Plugin.Gitmoji_Plus/bin/Release/win-x64/publish -DestinationPath Flow.Launcher.Plugin.Gitmoji_Plus/bin/Gitmoji_Plus.zip -Force

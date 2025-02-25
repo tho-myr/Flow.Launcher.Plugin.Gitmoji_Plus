@@ -1,10 +1,14 @@
 <div align="center">
   <img src="Flow.Launcher.Plugin.Gitmoji_Plus/Images/icon.png" alt="Shortcuts logo" width="75">  
-  
-<h1>Gitmoji Plus <br> Quickly search for Gitmoji Plus</h1>
-  <br>
+  <h1>Gitmoji Plus <br> Quickly search and copy Gitmojis</h1>
+  <p>based on original 
+    <a href="https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji">gitmoji plugin</a>
+    by 
+    <a href="https://github.com/Galedrim">Galedrim</a>
+  </p>
 </div>
 
+<br>
 
 <div align="center">
     <div>
@@ -16,9 +20,6 @@
         </a>
         <a href="https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/pulls">
             <img src="https://img.shields.io/github/issues-pr/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus" alt="GitHub pull requests">
-        </a>
-        <a href="https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/actions/workflows/release.yml">
-            <img src="https://img.shields.io/github/actions/workflow/status/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/release.yml?branch=master" alt="GitHub workflow status">
         </a>
         <a href="https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/commits">
             <img src="https://img.shields.io/github/last-commit/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus" alt="GitHub last commit">
@@ -33,8 +34,8 @@ Flow.Launcher.Plugin.Gitmoji_Plus
 
 > [!NOTE]
 >
-> Feel free to leave suggestions or report bugs in
-> the [issues](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues) section.
+> Feel free to leave suggestions or report bugs in the [issues](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues) section. 
+> Or fork the project and create a pull request with your own changes ^-^
 
 A plugin to search for gitmojis with [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher). 
 Inspired by the original but apparently unmaintained [Gitmoji Plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
@@ -56,7 +57,7 @@ gmp <search_query>
 
 #### Prerequisites
 
-- Install dotnet version <=8.x.x from Microsoft [here](https://dotnet.microsoft.com/en-us/download). 
+- Install dotnet version <=7.x.x from Microsoft [here](https://dotnet.microsoft.com/en-us/download). 
 - Install latest version of [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher). (default installation path is recommended for faster testing)
 
 #### Build project
@@ -91,7 +92,7 @@ dotnet build
 
 ### Inspiration
 
-Love to the developer(s) of the original [Gitmoji Plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
+Love to the developer of the original [Gitmoji Plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
 I took a lot of inspiration from their plugin and would like to thank them here <3
 
 Thanks for using my plugin or reading through this long-ass readme. love yall (づ ◕‿◕ )づ

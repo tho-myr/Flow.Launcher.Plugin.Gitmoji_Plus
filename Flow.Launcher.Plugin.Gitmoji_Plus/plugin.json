@@ -1,0 +1,13 @@
+{
+    "$schema": "https://www.flowlauncher.com/schemas/plugin.schema.json",
+    "ID": "218DAC752A2E468AB3781AFAEB481CBF",
+    "ActionKeyword": "gmp",
+    "Name": "Gitmoji Plus",
+    "Description": "Search and copy the right gitmoji 😜 Based on the original gitmoji plugin by galedrim",
+    "Author": "tho-myr",
+    "Version": "1.0.0",
+    "Language": "csharp",
+    "Website": "https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus",
+    "IcoPath": "Images\\icon.png",
+    "ExecuteFileName": "Flow.Launcher.Plugin.Gitmoji_Plus.dll"
+}
