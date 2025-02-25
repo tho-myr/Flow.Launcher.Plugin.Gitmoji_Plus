@@ -1,16 +1,4 @@
 <div align="center">
-  <img src="Flow.Launcher.Plugin.Gitmoji_Plus/Images/icon.png" alt="Shortcuts logo" width="75">  
-  <h1>Gitmoji Plus <br> Quickly search and copy Gitmojis</h1>
-  <p>based on original 
-    <a href="https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji">gitmoji plugin</a>
-    by 
-    <a href="https://github.com/Galedrim">Galedrim</a>
-  </p>
-</div>
-
-<br>
-
-<div align="center">
     <div>
         <a href="https://github.com/Flow-Launcher/Flow.Launcher.PluginsManifest">
             <img src="https://img.shields.io/badge/Flow%20Launcher-Plugin-blue" alt="Flow Launcher Plugin">
@@ -29,16 +17,26 @@
 
 <br>
 
-Flow.Launcher.Plugin.Gitmoji_Plus
-==================
+<div align="center">
+  <img src="Flow.Launcher.Plugin.Gitmoji_Plus/Images/icon.png" alt="Shortcuts logo" width="75">  
+  <h1>Gitmoji Plus <br> Quickly search and copy Gitmojis</h1>
+  <p>
+    based on original 
+    <a href="https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji">gitmoji plugin</a>
+    by 
+    <a href="https://github.com/Galedrim">Galedrim</a> 🥰
+  </p>
+</div>
+
+<br>
 
 > [!NOTE]
 >
 > Feel free to leave suggestions or report bugs in the [issues](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues) section. 
 > Or fork the project and create a pull request with your own changes ^-^
 
-A plugin to search for gitmojis with [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher). 
-Inspired by the original but apparently unmaintained [Gitmoji Plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
+A plugin to search for gitmojis with [flow launcher](https://github.com/Flow-Launcher/Flow.Launcher). 
+Inspired by the original but apparently unmaintained [gitmoji plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
 Written in C# for native flow launcher support and better perfomance. 
 Original plugin was written in python but lacked a few emojis and was quite slow.
 
@@ -46,10 +44,6 @@ Original plugin was written in python but lacked a few emojis and was quite slow
 ### Usage
 
 ```cmd
-gmp <status_code>
-
-or
-
 gmp <search_query>
 ```
 
@@ -58,14 +52,14 @@ gmp <search_query>
 #### Prerequisites
 
 - Install dotnet version <=7.x.x from Microsoft [here](https://dotnet.microsoft.com/en-us/download). 
-- Install latest version of [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher). (default installation path is recommended for faster testing)
+- Install latest version of [flow launcher](https://github.com/Flow-Launcher/Flow.Launcher). (default installation path is recommended for faster testing)
 
 #### Build project
 
 Run the following command in the root folder of the repository/project.
 
-Exit [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher), build with `dotnet build` 
-and then restart [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher)
+Exit [flow launcher](https://github.com/Flow-Launcher/Flow.Launcher), build with `dotnet build` 
+and then restart [flow launcher](https://github.com/Flow-Launcher/Flow.Launcher)
 
 ```cmd
 dotnet build
@@ -80,7 +74,7 @@ dotnet build
 >
 > ```<OutputPath>$(UserProfile)\AppData\Roaming\FlowLauncher\Plugins\Gitmoji Plus-DEBUG\</OutputPath>```
 >
-> If commented out you have to manually paste the build files from the folder `/Flow.Launcher.Plugin.Gitmoji_Plus/bin/Debug` to the plugin folder of your [Flow launcher](https://github.com/Flow-Launcher/Flow.Launcher) installation.
+> If commented out you have to manually paste the build files from the folder `/Flow.Launcher.Plugin.Gitmoji_Plus/bin/Debug` to the plugin folder of your [flow launcher](https://github.com/Flow-Launcher/Flow.Launcher) installation.
 
 ### Release plugin
 
@@ -92,7 +86,7 @@ dotnet build
 
 ### Inspiration
 
-Love to the developer of the original [Gitmoji Plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
+Love to the developer of the original [gitmoji plugin](https://github.com/Galedrim/Flow.Launcher.Plugin.Gitmoji). 
 I took a lot of inspiration from their plugin and would like to thank them here <3
 
 Thanks for using my plugin or reading through this long-ass readme. love yall (づ ◕‿◕ )づ
