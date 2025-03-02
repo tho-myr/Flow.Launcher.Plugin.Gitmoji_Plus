@@ -2,9 +2,11 @@
 
 All notable changes to this project will be documented in this file 🥰
 
-## [1.1.0] - 2025-xx-xx unreleased
+## [1.1.0] - 2025-03-02 unreleased
 
-- unreleased
+- 💄 update gitmoji icons to microsoft fluent emojis 3d [enhancement #3](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/3)
+- 🐛 fix brick.png by renaming to bricks.png [bug #2](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/2)
+- 🐛 fix issue OpenClipboard Failed by copying in STA thread [bug #1](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/1)
 
 ## [1.0.0] - 2025-02-25
 
