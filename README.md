@@ -12,6 +12,9 @@
         <a href="https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/commits">
             <img src="https://img.shields.io/github/last-commit/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus" alt="GitHub last commit">
         </a>
+        <a href="https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/releases">
+            <img src="https://img.shields.io/github/downloads/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/total" alt="Total Downloads">
+        </a>
     </div>
 </div>
 
