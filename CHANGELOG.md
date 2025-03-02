@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file 🥰
 
+## [1.2.0] - 2025-xx-xx unreleased
+
+- unreleased
+
 ## [1.1.0] - 2025-03-02 unreleased
 
 - 💄 update gitmoji icons to microsoft fluent emojis 3d [enhancement #3](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/3)
