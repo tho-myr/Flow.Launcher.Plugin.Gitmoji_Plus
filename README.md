@@ -62,6 +62,12 @@ gmp <search_query>
 
 ![plugin-screenshot.png](readme-assets/plugin-screenshot.png)
 
+### Settings
+
+- you can choose between emoji (✨) or code (:sparkles:) as preferred property to copy on click/enter (default: emoji [ ✨ ])
+
+![plugin-settings.png](readme-assets/plugin-settings.png)
+
 ### Development
 
 #### Prerequisites
