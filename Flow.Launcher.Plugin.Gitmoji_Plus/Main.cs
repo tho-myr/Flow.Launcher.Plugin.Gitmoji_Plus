@@ -4,7 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Versioning;
 using System.Text.Json;
+using System.Windows.Controls;
 using Flow.Launcher.Plugin.Gitmoji_Plus.Helper;
+using Flow.Launcher.Plugin.Gitmoji_Plus.Settings;
+using static Flow.Launcher.Plugin.Gitmoji_Plus.Settings.Settings;
 
 namespace Flow.Launcher.Plugin.Gitmoji_Plus;
 
@@ -19,20 +22,20 @@ public class Gitmoji {
 }
 
 [SupportedOSPlatform("windows")]
-public class Main : IPlugin, IContextMenu {
-    
+public class Main : IPlugin, IContextMenu, ISettingProvider {
     private PluginInitContext _context;
     private List<Gitmoji> _gitmojis;
-    
     private string _appIconPath = "Images/icon.png";
     private string _iconsFolder = "Icons";
     private string _gitmojiJsonFile = "Data/gitmojis.json";
+    private Settings.Settings _settings;
 
     public void Init(PluginInitContext context) {
         _context = context;
         _appIconPath = Path.Combine(context.CurrentPluginMetadata.PluginDirectory, _appIconPath);
         _iconsFolder = Path.Combine(context.CurrentPluginMetadata.PluginDirectory, _iconsFolder);
         _gitmojiJsonFile = Path.Combine(context.CurrentPluginMetadata.PluginDirectory, _gitmojiJsonFile);
+        _settings = context.API.LoadSettingJsonStorage<Settings.Settings>();
         LoadGitmojisFromJson();
     }
 
@@ -75,7 +78,12 @@ public class Main : IPlugin, IContextMenu {
                     IcoPath = Path.Combine(_iconsFolder, gitmoji.Icon),
                     ContextData = gitmoji,
                     Action = _ => {
-                        ClipboardHelper.CopyTextToClipboard(gitmoji.Emoji, _context);
+                        var textToCopy = _settings.PropertyToCopy switch {
+                            CopyAction.Code => gitmoji.Code,
+                            CopyAction.Emoji => gitmoji.Emoji,
+                            _ => gitmoji.Emoji
+                        };
+                        ClipboardHelper.CopyTextToClipboard(textToCopy, _context);
                         return true;
                     }
                 });
@@ -86,7 +94,7 @@ public class Main : IPlugin, IContextMenu {
     }
 
     public List<Result> LoadContextMenus(Result selectedResult) {
-        Gitmoji selectedGitmoji = selectedResult.ContextData as Gitmoji;
+        var selectedGitmoji = selectedResult.ContextData as Gitmoji;
         return new List<Result> {
             new Result {
                 Title = "copy emoji",
@@ -145,5 +153,9 @@ public class Main : IPlugin, IContextMenu {
 
     private bool Match(string query, string item) {
         return string.IsNullOrEmpty(query) || item.Contains(query, StringComparison.OrdinalIgnoreCase);
+    }
+
+    public Control CreateSettingPanel() {
+        return new PluginSettings(_context, _settings);
     }
 }

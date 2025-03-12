@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="Flow.Launcher.Plugin.Gitmoji_Plus.Settings.PluginSettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="400">
+    <Grid Margin="60,10,60,10" VerticalAlignment="Top">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+            <TextBlock Text="property to copy on click/enter:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <ComboBox x:Name="CopyActionComboBox"
+                      Width="200"
+                      Height="30"
+                      VerticalAlignment="Center"
+                      SelectionChanged="CopyActionComboBox_SelectionChanged">
+                <ComboBoxItem Content="emoji [ ✨ ]" />
+                <ComboBoxItem Content="code [ :sparkles: ]" />
+            </ComboBox>
+        </StackPanel>
+    </Grid>
+</UserControl>

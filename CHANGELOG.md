@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file 🥰
 
-## [1.1.0] - 2025-03-02 unreleased
+## [1.2.0] - 2025-03-12
+
+- ✨ add setting to choose between emoji (✨) or code (:sparkles:) as property to copy on click/enter [enhancement #4](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/4)
+
+## [1.1.0] - 2025-03-02
 
 - 💄 update gitmoji icons to microsoft fluent emojis 3d [enhancement #3](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/3)
 - 🐛 fix brick.png by renaming to bricks.png [bug #2](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/2)
