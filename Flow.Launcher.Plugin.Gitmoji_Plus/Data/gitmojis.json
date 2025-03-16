@@ -655,5 +655,14 @@
     "name": "safety-vest",
     "example": "🦺 Add input validation for user registration form",
     "icon": "safety-vest.png"
+  },
+  {
+    "emoji": "✈️",
+    "entity": "&#x2708;",
+    "code": ":airplane:",
+    "description": "Improve offline support.",
+    "name": "airplane",
+    "example": "✈️ Add service worker for offline support",
+    "icon": "airplane.png"
   }
 ]

@@ -1,4 +1,4 @@
-name: Publish Release
+name: publish release
 
 permissions:
   contents: write
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 7.0.x
@@ -30,26 +30,28 @@ jobs:
           path: "Flow.Launcher.Plugin.Gitmoji_Plus/plugin.json"
           prop_path: "Version"
 
-      - run: echo ${{steps.version.outputs.prop}}
-
-      - name: Extract release notes
+      - name: print version
+        run: echo ${{steps.version.outputs.prop}}
+        
+      - name: extract release notes
         id: extract-release-notes
         uses: ffurrer2/extract-release-notes@v2
 
-      - run: echo '${{ steps.extract-release-notes.outputs.release_notes }}'
+      - name: print release notes
+        run: echo '${{ steps.extract-release-notes.outputs.release_notes }}'
 
-      - name: Restore dependencies
+      - name: restore dependencies
         run: |
           cd Flow.Launcher.Plugin.Gitmoji_Plus
           dotnet restore
 
-      - name: Build
+      - name: build
         run: |
           cd Flow.Launcher.Plugin.Gitmoji_Plus
           dotnet publish -c Release -r win-x64 --no-self-contained Flow.Launcher.Plugin.Gitmoji_Plus.csproj
           7z a -tzip "Flow.Launcher.Plugin.Gitmoji_Plus.zip" "./bin/Release/win-x64/publish/*"
 
-      - name: Publish
+      - name: publish
         uses: softprops/action-gh-release@v2
         with:
           body: '${{ steps.extract-release-notes.outputs.release_notes }}'

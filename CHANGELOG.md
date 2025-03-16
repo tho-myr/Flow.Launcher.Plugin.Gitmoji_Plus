@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file 🥰
 
+## [1.3.0] - 2025-03-16
+
+- ✨ add missing ✈️ emoji & github action to check for new gitmoji changes [enhancement #5](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/5)
+
 ## [1.2.0] - 2025-03-12
 
 - ✨ add setting to choose between emoji (✨) or code (:sparkles:) as property to copy on click/enter [enhancement #4](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/4)
