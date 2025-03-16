@@ -1,0 +1,85 @@
+﻿name: check gitmoji changes
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # runs daily at midnight
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check-gitmojis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: create directory for json storage
+        run: mkdir -p gitmoji_data
+
+      - name: restore previous gitmojis.json from cache
+        id: cache-gitmojis
+        uses: actions/cache@v4
+        with:
+          path: gitmoji_data/gitmojis.json
+          key: gitmojis-json-cache
+          restore-keys: gitmojis-json-cache
+
+      - name: fetch previous gitmojis.json
+        run: |
+          if [ -f gitmoji_data/gitmojis.json ]; then
+            cp gitmoji_data/gitmojis.json gitmoji_data/previous_gitmojis.json
+          else
+            echo "[]" > gitmoji_data/previous_gitmojis.json
+          fi
+
+      - name: fetch current gitmojis.json
+        run: curl -o gitmoji_data/current_gitmojis.json https://raw.githubusercontent.com/carloscuesta/gitmoji/refs/heads/master/packages/gitmojis/src/gitmojis.json
+
+      - name: verify json files exist
+        run: ls -lah gitmoji_data/
+
+      - name: compare json files
+        id: compare
+        run: |
+          jq --sort-keys . gitmoji_data/previous_gitmojis.json > gitmoji_data/previous_sorted.json
+          jq --sort-keys . gitmoji_data/current_gitmojis.json > gitmoji_data/current_sorted.json
+
+          diff --unified=3 gitmoji_data/previous_sorted.json gitmoji_data/current_sorted.json | grep -E "^\+|^\-" | grep -vE "^\+\+\+|^\-\-\-" > gitmoji_data/temp_diff.txt || true
+
+          if [ -s gitmoji_data/temp_diff.txt ]; then
+            echo "changes detected!"
+            echo -e "### 🔄 changes in gitmojis.json from [official gitmoji repo](https://github.com/carloscuesta/gitmoji/blob/master/packages/gitmojis/src/gitmojis.json) \n\n\`\`\`diff" > gitmoji_data/diff.txt
+            cat gitmoji_data/temp_diff.txt >> gitmoji_data/diff.txt
+            echo -e "\n\`\`\`" >> gitmoji_data/diff.txt
+            echo "changes_detected=true" >> $GITHUB_ENV
+          else
+            echo "no changes detected."
+            echo "changes_detected=false" >> $GITHUB_ENV
+          fi
+
+      - name: save current gitmojis.json
+        run: cp gitmoji_data/current_gitmojis.json gitmoji_data/gitmojis.json
+
+      - name: save gitmojis.json to cache for future runs
+        if: always()
+        uses: actions/cache@v4
+        with:
+          path: gitmoji_data/gitmojis.json
+          key: gitmojis-json-cache
+
+      - name: create issue if changes detected
+        if: env.changes_detected == 'true'
+        uses: peter-evans/create-issue-from-file@v5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: '✨ gitmojis.json has changed | add changes to plugin :3'
+          content-filepath: gitmoji_data/diff.txt
+          assignees: 'tho-myr'
+          labels: |
+            update
+            automated issue
