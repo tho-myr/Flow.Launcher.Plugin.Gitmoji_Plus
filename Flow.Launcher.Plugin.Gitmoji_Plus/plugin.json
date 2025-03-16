@@ -5,7 +5,7 @@
     "Name": "Gitmoji Plus",
     "Description": "Search and copy the right gitmoji 😜 Based on the original gitmoji plugin by galedrim",
     "Author": "tho-myr",
-    "Version": "1.3.0",
+    "Version": "1.4.0",
     "Language": "csharp",
     "Website": "https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus",
     "IcoPath": "Images\\icon.png",
