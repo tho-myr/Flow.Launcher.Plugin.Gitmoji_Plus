@@ -2,9 +2,9 @@
 
 All notable changes to this project will be documented in this file 🥰
 
-## [1.3.0] - 2025-xx-xx unreleased
+## [1.3.0] - 2025-03-16
 
-- unreleased
+- ✨ add missing ✈️ emoji & github action to check for new gitmoji changes [enhancement #5](https://github.com/tho-myr/Flow.Launcher.Plugin.Gitmoji_Plus/issues/5)
 
 ## [1.2.0] - 2025-03-12
 
