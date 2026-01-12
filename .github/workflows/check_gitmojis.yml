@@ -22,7 +22,7 @@ jobs:
 
       - name: restore previous gitmojis.json from cache
         id: cache-gitmojis
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: gitmoji_data/gitmojis.json
           key: gitmojis-json-cache
@@ -66,7 +66,7 @@ jobs:
 
       - name: save gitmojis.json to cache for future runs
         if: always()
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: gitmoji_data/gitmojis.json
           key: gitmojis-json-cache
