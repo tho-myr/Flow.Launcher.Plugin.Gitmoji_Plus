@@ -1,4 +1,4 @@
-﻿name: check gitmoji changes
+name: check gitmoji changes
 
 on:
   schedule:
@@ -73,7 +73,7 @@ jobs:
 
       - name: create issue if changes detected
         if: env.changes_detected == 'true'
-        uses: peter-evans/create-issue-from-file@v5
+        uses: peter-evans/create-issue-from-file@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
