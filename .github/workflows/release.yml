@@ -52,7 +52,7 @@ jobs:
           7z a -tzip "Flow.Launcher.Plugin.Gitmoji_Plus.zip" "./bin/Release/win-x64/publish/*"
 
       - name: publish
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           body: '${{ steps.extract-release-notes.outputs.release_notes }}'
           files: "Flow.Launcher.Plugin.Gitmoji_Plus/Flow.Launcher.Plugin.Gitmoji_Plus.zip"
